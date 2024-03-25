@@ -1,0 +1,29 @@
+.bg-hero {
+  background-image: url("/img/pat.svg"), radial-gradient(145% 50% at 30% 55%, #103619 0%, #12602a 100%);
+  background-size: 400px 400px, auto;
+  background-position: center;
+  background-repeat: repeat;
+}
+.bg-pep {
+  background-image: url("/img/pat.svg"), linear-gradient(to bottom, #114b20, #1d692e);
+  background-size: 400px 400px, auto;
+  background-position: center;
+  background-repeat: repeat;
+}
+.text-pep {
+  background: linear-gradient(to bottom, #0dca56 70%, #0a943e 30%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bg-pep-2 {
+  background: linear-gradient(to bottom, #12de60 , #0fb850 );
+}
+::-webkit-scrollbar {
+  width: 2px;
+  background: transparent;
+}
+
+/* This will change the color of the scrollbar to green */
+::-webkit-scrollbar-thumb {
+  background: green;
+}
