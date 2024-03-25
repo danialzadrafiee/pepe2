@@ -42,7 +42,7 @@ const RoadmapData = [
     body: `We are negotiating with different third parties. Our plan is to list Pepoleon on major CEXes as soon as possible.`,
   },
   {
-    title: "Competition",
+    title: "Conquest",
     img: "./img/rod/9.jpeg",
     body: `Our final goal is to become the largest Meme coin community. We will keep up our competition until Pepoleon conquers all meme coins.`,
   },
