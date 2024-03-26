@@ -11,10 +11,19 @@ const About = () => {
             <span className="text-c1">PEPOLEON</span>
           </h2>
           <div className="mob:px-4 tab:max-w-lg tab:text-center mob:text-[15px]">
-            The internet is drowning in normie memes! Bland, uninspired, and forgettable. The dream of a truly Meme Empire fades without a memeperor. But fear not, Pepoleon has arrived! Pepoleon is
-            tired of these pretenders to the meme throne. Pepoleon will: Wage war on the normies: No more recycled formats, no more uninspired rehashes. Pepoleon will conquer the memes, one meme at a
-            time. Build a Meme Empire: From the dankest corners of Reddit to the fleeting glory of Twitter trends, Pepoleon's dominion shall spread. Pepoleon will tweet, Pepoleon will meme, Pepoleon
-            will go viral. Join Pepoleon's Army and be a part of the conquest.
+            <div>
+              The internet is drowning in normie memes! Bland, uninspired, and forgettable. The dream of a truly Meme Empire fades without a memeperor. But fear not, Pepoleon has arrived! Pepoleon is
+              tired of these pretenders to the meme throne.
+            </div>
+            <div>Pepoleon will:</div>
+            <ul className="list-disc list-outside ml-5">
+              <li> Wage war on the normies: No more recycled formats, no more uninspired rehashes. Pepoleon will conquer the memes, one meme at a time.</li>
+              <li>
+                Build a Meme Empire: From the dankest corners of Reddit to the fleeting glory of Twitter trends, Pepoleon's dominion shall spread. Pepoleon will tweet, Pepoleon will meme, Pepoleon
+                will go viral.
+              </li>
+            </ul>
+            <div className="mt-5 italic">"Join Pepoleon's Army and be a part of the conquest"</div>
           </div>
         </Grid>
       </div>
