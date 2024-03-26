@@ -11,12 +11,10 @@ const About = () => {
             <span className="text-c1">PEPOLEON</span>
           </h2>
           <div className="mob:px-4 tab:max-w-lg tab:text-center mob:text-[15px]">
-            Meme Conquest Awaits The internet is drowning in normie memes. Bland, uninspired, and utterly forgettable. The dream of a true Meme Empire fades without a memeperor. But fear not, for
-            Pepoleon has arrived! We, the Pepoleon Army, are tired of these pretenders. We yearn for a leader with a strategic mind, a bicorne that demands respect, and the undeniable swagger of a
-            true memperor. Join us, and together we shall: Wage war on the normies: No more recycled formats, no more uninspired rehashes. We will conquer the memes with fresh LOLs and originality.
-            Build a Meme Empire: From the dankest corners of Reddit to the fleeting glory of Twitter trends, our dominion shall spread. We will leave other meme coins trembling in our wake. Moon with
-            the Power of Laughter: Forget Lambos. We'll be soaring through the digital stratosphere, fueled by the unbridled joy of a perfectly executed meme. We'll tweet, we'll meme, we'll moon. Are
-            you ready to make Meme Nation truly chad again? Then enlist in the Pepoleon Army today!
+            The internet is drowning in normie memes! Bland, uninspired, and forgettable. The dream of a truly Meme Empire fades without a memeperor. But fear not, Pepoleon has arrived! Pepoleon is
+            tired of these pretenders to the meme throne. Pepoleon will: Wage war on the normies: No more recycled formats, no more uninspired rehashes. Pepoleon will conquer the memes, one meme at a
+            time. Build a Meme Empire: From the dankest corners of Reddit to the fleeting glory of Twitter trends, Pepoleon's dominion shall spread. Pepoleon will tweet, Pepoleon will meme, Pepoleon
+            will go viral. Join Pepoleon's Army and be a part of the conquest.
           </div>
         </Grid>
       </div>
