@@ -53,7 +53,7 @@ const Hero = () => {
         <Grid className="grid-cols-4 mob:grid-cols-2 border-t border-b border-c1 mob:h-max h-[195px]  bg-black/40 w-full">
           <TokenomicsCard title="TOTAL SUPPLY" value="690B" />
           <TokenomicsCard title="PRESALE SUPPLY" value="379.5B" />
-          <TokenomicsCard title="LP BURNE" value="AT  LAUNCH" />
+          <TokenomicsCard title="LP BURN" value="AT  LAUNCH" />
           <TokenomicsCard title="OWNERSHIP" value="REWOKE" />
         </Grid>
       </section>
