@@ -12,11 +12,10 @@
 }
 .text-pep {
   background: linear-gradient(to bottom, #0dca56 70%, #0a943e 30%);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .bg-pep-2 {
-  background: linear-gradient(to bottom, #12de60 , #0fb850 );
+  background: linear-gradient(to bottom, #12de60, #0fb850);
 }
 ::-webkit-scrollbar {
   width: 2px;
@@ -26,4 +25,9 @@
 /* This will change the color of the scrollbar to green */
 ::-webkit-scrollbar-thumb {
   background: green;
+}
+
+.wallet-adapter-button {
+  background: #681fd6;
+  
 }

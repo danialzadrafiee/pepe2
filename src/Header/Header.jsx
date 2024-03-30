@@ -1,11 +1,12 @@
 import { Flex, Grid, Inside } from "@/Components/Tags/Tags";
 import React, { useEffect, useRef, useState } from "react";
 import { Pause, Play, TelegramLogo, TwitterLogo } from "@phosphor-icons/react";
+import { useMainContext } from "@/Context";
 const Header = () => {
   const [firstPlayFlag, setFirstPlayFlag] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
-
+  const { page, setPage } = useMainContext();
   useEffect(() => {
     const playAudio = () => {
       if (firstPlayFlag === 0) {
@@ -44,6 +45,7 @@ const Header = () => {
           <a href="#Tokenomics">Tokenomic</a>
           <a href="#About">About</a>
           <a href="#Warmap">War Map</a>
+     
         </Flex>
         <Flex className="justify-end gap-1 items-center">
           <a href="https://t.me/PepoleonPortal" className="size-10 bg-c3 rounded border border-c1/50 text-c1 flex items-center justify-center">
@@ -52,6 +54,7 @@ const Header = () => {
           <a href="https://twitter.com/PepoleonOnSol" className="size-10 bg-c3 rounded border border-c1/50 text-c1 flex items-center justify-center">
             <TwitterLogo size={20} weight="fill" />
           </a>
+
           <div
             onClick={() => {
               toggleMusic();
@@ -60,7 +63,7 @@ const Header = () => {
           >
             {isPlaying ? <Pause size={20} weight="fill" /> : <Play size={20} weight="fill" />}
           </div>
-          <audio ref={audioRef}  loop={true} src="./pepoleon.mp3"></audio>
+          <audio ref={audioRef} loop={true} src="./pepoleon.mp3"></audio>
         </Flex>
       </Inside>
     </header>
