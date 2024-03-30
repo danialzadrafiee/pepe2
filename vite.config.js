@@ -8,6 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      crypto: 'crypto-browserify',
     },
   },
   optimizeDeps: {
@@ -17,9 +18,12 @@ export default defineConfig({
       },
       plugins: [
         NodeGlobalsPolyfillPlugin({
-          buffer: true
+          buffer: true,
+          crypto: true,
         })
       ]
     }
   }
 });
+
+
