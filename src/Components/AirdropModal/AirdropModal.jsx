@@ -22,7 +22,7 @@ const AirdropModal = ({ isAirdropModalOpen, setIsAirdropModalOpen }) => {
   return (
     <>
       <div className={`fixed w-dvw h-dvh bg-black/80 flex items-center justify-center z-50 ${!isAirdropModalOpen && "hidden"}`}>
-        <Inside className="max-w-xs flex-col flex h-max p-6 mx-auto w-full bg-pep justify-between rounded-xl">
+        <Inside className="max-w-xs  flex-col flex h-max p-6 mx-auto w-full bg-pep justify-between rounded-xl">
           <header>
             <Flex className="items-center justify-between ">
               <div className="text-center text-white font-impact text-2xl">Airdrop</div>
