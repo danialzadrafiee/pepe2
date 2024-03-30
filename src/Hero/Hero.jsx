@@ -1,7 +1,6 @@
 import React from "react";
 import { Flex, Grid } from "@/Components/Tags/Tags";
 import Header from "@/Header/Header";
-import Airdrop from "@/Components/Airdop/Airdrop";
 const Hero = () => {
   const TokenomicsCard = ({ title, value }) => {
     return (
@@ -20,7 +19,6 @@ const Hero = () => {
           <Header />
           <div className="font-impact leading-[80px] mob:text-[45px] tab:text-[60px] tab:mt-48  tab:leading-[60px]  tab:mx-auto tab:text-center  tab:max-w-lg  mob:mt-32 mob:leading-[50px] mob:text-center text-[80px] mob:pb-4  tab:pb-2 pb-14">
             Don't miss the great <span className="text-[#0cbe50]">presale</span>
-            <Airdrop />
           </div>
           <div className="text-xl mob:text-lg mob:text-center mob:px-4 mob:mx-auto  max-w-lg tab:text-center pb-6">Presale will launch soon. Join Pepoleon's army to conquer all the memes.</div>
           <Grid className="grid-cols-2 origin-top mob:scale-[0.8] mob:mx-auto tab:mx-auto  gap-2  w-max">
