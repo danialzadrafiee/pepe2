@@ -49,18 +49,20 @@ const RoadmapData = [
 ];
 const RoadmapCard = ({ img, title, children }) => {
   return (
-    <div className="rounded-[26px] text-center bg-pep border border-c1 ">
-      <header className="flex w-full items-center justify-between p-[18px]">
-        <div className="bg-c1 rounded-full size-[18px]"></div>
-        <div className="bg-c1 rounded-full size-[18px]"></div>
-      </header>
-      <Body className="p-[18px]">
-        <Grid className="justify-items-center">
-          <img src={img} className="rounded-lg w-80 mb-4"  />
-          <h3 className="text-[32px] font-impact">{title}</h3>
-          <div>{children}</div>
-        </Grid>
-      </Body>
+    <div className="rounded-[26px] flex flex-col justify-between text-center bg-pep border border-c1 ">
+      <Grid>
+        <header className="flex w-full items-center justify-between p-[18px]">
+          <div className="bg-c1 rounded-full size-[18px]"></div>
+          <div className="bg-c1 rounded-full size-[18px]"></div>
+        </header>
+        <Body className="p-[18px]">
+          <Grid className="justify-items-center">
+            <img src={img} className="rounded-lg w-80 mb-4" />
+            <h3 className="text-[32px] font-impact">{title}</h3>
+            <div>{children}</div>
+          </Grid>
+        </Body>
+      </Grid>
       <footer className="flex w-full items-center justify-between p-[18px]">
         <div className="bg-c1 rounded-full size-[18px]"></div>
         <div className="bg-c1 rounded-full size-[18px]"></div>
