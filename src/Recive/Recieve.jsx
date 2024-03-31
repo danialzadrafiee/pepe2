@@ -62,7 +62,7 @@ const AirButton = () => {
           <div className="min-h-dvh h-full z-[60] bg-pep flex tab:flex-col mob:flex-col items-center justify-center p-4">
             <ArrowLeft onClick={() => setPage(0)} size={40} className="text-c1 absolute top-9 left-9 mob:top-4mob:left-4 bg-black/60 border-2 border-c1  p-2  rounded-full cursor-pointer" />
             <img src="/img/p1.png" className="grayscale lg:absolute mob:mx-auto right-0 bottom-0 w-[50%] max-w-[28vw] md:w-[28vw]" alt="" />
-            <div className="rounded-lg XXXpointer-events-none XXXgrayscale w-full max-w-lg border-2 p-6 sm:p-10 border-c1 bg-gradient-to-br from-black/70 to-gray-900/70 shadow-lg shadow-c1/30">
+            <div className="rounded-lg pointer-events-none grayscale w-full max-w-lg border-2 p-6 sm:p-10 border-c1 bg-gradient-to-br from-black/70 to-gray-900/70 shadow-lg shadow-c1/30">
               <Grid className="items-center">
                 <h2 className="text-xl font-semibold flex justify-between items-center mb-2">
                   <div>Withdraw Airdrops</div> <span className="rounded text-sm px-2  bg-yellow-400 text-yellow-900">Soon</span>
