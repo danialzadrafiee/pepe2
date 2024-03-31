@@ -10,7 +10,7 @@ import bs58 from "bs58";
 import { Flex, Grid } from "@/Components/Tags/Tags";
 import { ArrowLeft, ArrowsClockwise, Check, Gift } from "@phosphor-icons/react";
 import { useMainContext } from "@/Context";
-
+import { Buffer } from 'buffer';
 const AirButton = () => {
   const [isLoading, setIsLoading] = useState(false);
   const network = WalletAdapterNetwork.Devnet;
@@ -24,11 +24,10 @@ const AirButton = () => {
         await wallet.connect();
       }
       const tokenReceiver = wallet.publicKey.toString();
-
       const response = await fetch("http://localhost:3000/sign-transaction", {
         method: "POST",
         headers: {
-          "Content-Type": "buttonlication/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ tokenReceiver }),
       });
@@ -41,8 +40,12 @@ const AirButton = () => {
       const confirmationStrategy = {
         commitment: "processed",
       };
-      const signature = await web3.sendAndConfirmRawTransaction(connection, signedTransaction.serialize(), confirmationStrategy);
-      const confirmResult = await connection.confirmTransaction(signature);
+      const signature = await web3.sendAndConfirmRawTransaction(
+        connection,
+        signedTransaction.serialize(),
+        confirmationStrategy
+      );
+      const confirmResult = await connection.confirmTransaction({ signature });
       console.log("Transaction confirmation status:", confirmResult.value);
       console.log("Token airdrop successful! Signature:", signature);
     } catch (error) {
@@ -56,12 +59,14 @@ const AirButton = () => {
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
-          <div className=" min-h-dvh h-full z-[60] bg-pep flex tab:flex-col mob:flex-col items-center justify-center p-4">
+          <div className="min-h-dvh h-full z-[60] bg-pep flex tab:flex-col mob:flex-col items-center justify-center p-4">
             <ArrowLeft onClick={() => setPage(0)} size={40} className="text-c1 absolute top-9 left-9 mob:top-4mob:left-4 bg-black/60 border-2 border-c1  p-2  rounded-full cursor-pointer" />
             <img src="/img/p1.png" className="grayscale lg:absolute mob:mx-auto right-0 bottom-0 w-[50%] max-w-[28vw] md:w-[28vw]" alt="" />
-            <div className="rounded-lg pointer-events-none grayscale w-full max-w-lg border-2 p-6 sm:p-10 border-c1 bg-gradient-to-br from-black/70 to-gray-900/70 shadow-lg shadow-c1/30">
+            <div className="rounded-lg XXXpointer-events-none XXXgrayscale w-full max-w-lg border-2 p-6 sm:p-10 border-c1 bg-gradient-to-br from-black/70 to-gray-900/70 shadow-lg shadow-c1/30">
               <Grid className="items-center">
-                <h2 className="text-xl font-semibold flex justify-between items-center mb-2"><div>Withdraw Airdrops</div> <span className="rounded text-sm px-2  bg-yellow-400 text-yellow-900">Soon</span></h2>
+                <h2 className="text-xl font-semibold flex justify-between items-center mb-2">
+                  <div>Withdraw Airdrops</div> <span className="rounded text-sm px-2  bg-yellow-400 text-yellow-900">Soon</span>
+                </h2>
                 <Flex className="flex-col space-y-6">
                   <ul className="list-none [&>li]:ml-0 space-y-4">
                     <li className="bg-gray-800/50 p-4 rounded-lg shadow-md">

@@ -10,7 +10,7 @@ const Header = () => {
   useEffect(() => {
     const playAudio = () => {
       if (firstPlayFlag === 0) {
-        audioRef.current.play();
+        // audioRef.current.play();
         setIsPlaying(true);
         setFirstPlayFlag(1);
       }
@@ -27,7 +27,7 @@ const Header = () => {
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
-      audioRef.current.play();
+      // audioRef.current.play();
       setIsPlaying(true);
     }
   };
