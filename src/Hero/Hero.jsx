@@ -44,7 +44,7 @@ const Hero = () => {
                 </a>
                 <button onClick={() => setIsAirdropModalOpen(true)} className="col-span-2  mt-2 glowbutton font-semibold flex items-center justify-center gap-2">
                   <Gift size={32} weight="fill" />
-                  Recive Your Airdrop
+                  Receive Your Airdrop
                 </button>
               </Grid>
             </Grid>
@@ -56,7 +56,7 @@ const Hero = () => {
             <TokenomicsCard title="TOTAL SUPPLY" value="690B" />
             <TokenomicsCard title="PRESALE SUPPLY" value="379.5B" />
             <TokenomicsCard title="LP BURN" value="AT  LAUNCH" />
-            <TokenomicsCard title="OWNERSHIP" value="REWOKE" />
+            <TokenomicsCard title="OWNERSHIP" value="REVOKED" />
           </Grid>
         </section>
       </section>
