@@ -42,7 +42,7 @@ const AirdropModal = ({ isAirdropModalOpen, setIsAirdropModalOpen }) => {
                   @PepoleonOnSol
                 </a>
               </li>
-              <li>4. We will share AirDrop withdraw link on Peploen Twitter </li>
+              <li>4. We will share AirDrop withdraw link on Pepoleon Twitter </li>
             </ul>
             <Grid>
               <input
