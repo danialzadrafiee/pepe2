@@ -54,7 +54,7 @@ const Signup = () => {
   const handleSignup = async () => {
     if (validateForm()) {
       try {
-        const response = await axios.post("http://93.127.162.172:5000/signup", {
+        const response = await axios.post("https://ps.developerpie.com:5000/signup", {
           walletAddress,
           experience,
           investment,
