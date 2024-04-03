@@ -86,7 +86,7 @@ const Signup = () => {
         <img src="/img/tr.png" className="w-[200px]" />
         <div className="max-w-sm p-6 w-full bg-black/90 border-c1 border-2 rounded-lg shadow-lg">
           <Grid>
-            <Label className="text-indigo-400 text-xl font-bold mb-2">Wallet Address</Label>
+            <Label className="text-indigo-400 text-lg font-semibold mb-2">Wallet Address</Label>
             <input
               placeholder="Your Solana wallet address"
               className={`px-4 py-3 rounded-lg bg-gray-700 text-white border-2 focus:outline-none focus:border-indigo-500 transition duration-300 ease-in-out ${
@@ -98,18 +98,18 @@ const Signup = () => {
             {errors.walletAddress && <p className="text-red-500 text-sm mt-1">{errors.walletAddress}</p>}
           </Grid>
           <Grid className="mt-6">
-            <Label className="text-indigo-400 text-xl font-bold mb-2">How much is your experience?</Label>
+            <Label className="text-indigo-400 text-lg font-semibold mb-2">How much is your experience?</Label>
             <Grid className="grid-cols-2 gap-4">
               {["professional", "beginner"].map((exp) => (
                 <Flex key={exp} className="items-center">
-                  <label className="ml-2 text-gray-300 flex gap-2 items-center">
+                  <label className="ml-2 text-gray-300 mob:text-sm flex gap-1 items-center">
                     <input
                       type="radio"
                       name="experience"
                       value={exp}
                       checked={experience === exp}
                       onChange={handleExperienceChange}
-                      className="form-radio h-5 w-5 text-indigo-500 transition duration-150 ease-in-out"
+                      className="form-radio size-4 text-indigo-500 transition duration-150 ease-in-out"
                     />
                     <div>I'm {exp}</div>
                   </label>
@@ -119,14 +119,14 @@ const Signup = () => {
             {errors.experience && <p className="text-red-500 text-sm mt-1">{errors.experience}</p>}
           </Grid>
           <Grid className="mt-6">
-            <Label className="text-indigo-400 text-xl font-bold mb-2">How much do you like to invest?</Label>
+            <Label className="text-indigo-400 text-lg font-semibold mb-2">How much do you like to invest?</Label>
             <Grid className="grid-cols-2 gap-4">
               {["Less than 10 SOL", "10 to 50 SOL", "50 to 100 SOL", "More than 100 SOL"].map((inv, i) => (
                 <button
                   key={i}
                   className={`rounded-lg text-sm bg-gradient-to-r ${
                     ["from-indigo-600 to-purple-600", "from-purple-600 to-pink-600", "from-pink-600 to-red-600", "from-red-600 to-yellow-600"][i]
-                  } text-white px-4 py-3 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 ${investment === inv ? "ring-2 ring-offset-2 ring-indigo-500" : ""}`}
+                  } text-white px-2 py-3 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 ${investment === inv ? "ring-2 ring-offset-2 ring-indigo-500" : ""}`}
                   onClick={() => handleInvestmentClick(inv)}
                 >
                   {inv}
