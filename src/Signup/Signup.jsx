@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Flex, Grid, Label } from "@/Components/Tags/Tags";
-import { PrismaClient } from "@prisma/client";
 import axios from "axios";
 import { PublicKey } from "@solana/web3.js";
 import { toast, ToastContainer } from "react-toastify";
@@ -13,7 +12,6 @@ const Signup = () => {
   const [experience, setExperience] = useState("");
   const [investment, setInvestment] = useState("");
   const [errors, setErrors] = useState({});
-  const prisma = new PrismaClient();
 
   const handleWalletAddressChange = (e) => {
     setWalletAddress(e.target.value);
