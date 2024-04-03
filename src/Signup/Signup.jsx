@@ -3,8 +3,10 @@ import { Flex, Grid, Label } from "@/Components/Tags/Tags";
 import { PrismaClient } from "@prisma/client";
 import axios from "axios";
 import { PublicKey } from "@solana/web3.js";
-import { toast , ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ArrowLeft } from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   const [walletAddress, setWalletAddress] = useState("");
@@ -75,13 +77,14 @@ const Signup = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center mob:min-h-dvh bg-pep">
+      <Link to="/">
+        <ArrowLeft size={40} className="text-c1 absolute z-40 top-9 left-9 mob:top-4mob:left-4 bg-black/60 border-2 border-c1  p-2  rounded-full cursor-pointer" />
+      </Link>
       <Flex className="flex-col items-center justify-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
         <img src="/img/tr.png" className="w-[200px]" />
         <div className="max-w-sm p-6 w-full bg-black/90 border-c1 border-2 rounded-lg shadow-lg">
           <Grid>
-            <Label className="text-indigo-400 text-xl font-bold mb-2">
-              Wallet Address
-            </Label>
+            <Label className="text-indigo-400 text-xl font-bold mb-2">Wallet Address</Label>
             <input
               placeholder="Your Solana wallet address"
               className={`px-4 py-3 rounded-lg bg-gray-700 text-white border-2 focus:outline-none focus:border-indigo-500 transition duration-300 ease-in-out ${
@@ -90,16 +93,10 @@ const Signup = () => {
               value={walletAddress}
               onChange={handleWalletAddressChange}
             />
-            {errors.walletAddress && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.walletAddress}
-              </p>
-            )}
+            {errors.walletAddress && <p className="text-red-500 text-sm mt-1">{errors.walletAddress}</p>}
           </Grid>
           <Grid className="mt-6">
-            <Label className="text-indigo-400 text-xl font-bold mb-2">
-              How much is your experience?
-            </Label>
+            <Label className="text-indigo-400 text-xl font-bold mb-2">How much is your experience?</Label>
             <Grid className="grid-cols-2 gap-4">
               {["professional", "beginner"].map((exp) => (
                 <Flex key={exp} className="items-center">
@@ -117,39 +114,24 @@ const Signup = () => {
                 </Flex>
               ))}
             </Grid>
-            {errors.experience && (
-              <p className="text-red-500 text-sm mt-1">{errors.experience}</p>
-            )}
+            {errors.experience && <p className="text-red-500 text-sm mt-1">{errors.experience}</p>}
           </Grid>
           <Grid className="mt-6">
-            <Label className="text-indigo-400 text-xl font-bold mb-2">
-              How much do you like to invest?
-            </Label>
+            <Label className="text-indigo-400 text-xl font-bold mb-2">How much do you like to invest?</Label>
             <Grid className="grid-cols-2 gap-4">
-              {["Less than 10 SOL", "10 to 50 SOL", "50 to 100 SOL", "More than 100 SOL"].map(
-                (inv, i) => (
-                  <button
-                    key={i}
-                    className={`rounded-lg text-sm bg-gradient-to-r ${
-                      [
-                        "from-indigo-600 to-purple-600",
-                        "from-purple-600 to-pink-600",
-                        "from-pink-600 to-red-600",
-                        "from-red-600 to-yellow-600",
-                      ][i]
-                    } text-white px-4 py-3 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 ${
-                      investment === inv ? "ring-2 ring-offset-2 ring-indigo-500" : ""
-                    }`}
-                    onClick={() => handleInvestmentClick(inv)}
-                  >
-                    {inv}
-                  </button>
-                )
-              )}
+              {["Less than 10 SOL", "10 to 50 SOL", "50 to 100 SOL", "More than 100 SOL"].map((inv, i) => (
+                <button
+                  key={i}
+                  className={`rounded-lg text-sm bg-gradient-to-r ${
+                    ["from-indigo-600 to-purple-600", "from-purple-600 to-pink-600", "from-pink-600 to-red-600", "from-red-600 to-yellow-600"][i]
+                  } text-white px-4 py-3 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 ${investment === inv ? "ring-2 ring-offset-2 ring-indigo-500" : ""}`}
+                  onClick={() => handleInvestmentClick(inv)}
+                >
+                  {inv}
+                </button>
+              ))}
             </Grid>
-            {errors.investment && (
-              <p className="text-red-500 text-sm mt-1">{errors.investment}</p>
-            )}
+            {errors.investment && <p className="text-red-500 text-sm mt-1">{errors.investment}</p>}
           </Grid>
           <Grid className="mt-6">
             <button

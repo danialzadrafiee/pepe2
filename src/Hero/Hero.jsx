@@ -1,8 +1,9 @@
 import React, { Fragment, useState } from "react";
 import { Flex, Grid } from "@/Components/Tags/Tags";
 import Header from "@/Header/Header";
-import { Gift, TelegramLogo, TwitterLogo } from "@phosphor-icons/react";
+import { Gift, Rocket, TelegramLogo, TwitterLogo } from "@phosphor-icons/react";
 import AirdropModal from "@/Components/AirdropModal/AirdropModal";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [isAirdropModalOpen, setIsAirdropModalOpen] = useState(false);
@@ -42,10 +43,11 @@ const Hero = () => {
                     <div>Twitter</div>
                   </span>
                 </a>
-                <button onClick={() => setIsAirdropModalOpen(true)} className="col-span-2  mt-2 glowbutton font-semibold flex items-center justify-center gap-2">
-                  <Gift size={32} weight="fill" />
-                  Receive Your Airdrop
-                </button>
+                  {/*  onClick={() => setIsAirdropModalOpen(true)} */}
+                <Link className="col-span-2  mt-2 glowbutton font-semibold flex items-center justify-center gap-2" to="/presale_signup">
+                    <Rocket size={32} weight="fill" />
+                    Sign up for Pre-sale
+                </Link>
               </Grid>
             </Grid>
           </Grid>

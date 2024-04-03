@@ -2,6 +2,7 @@ import { Flex, Grid, Inside } from "@/Components/Tags/Tags";
 import React, { useEffect, useRef, useState } from "react";
 import { Pause, Play, TelegramLogo, TwitterLogo } from "@phosphor-icons/react";
 import { useMainContext } from "@/Context";
+import { Link } from "react-router-dom";
 const Header = () => {
   const [firstPlayFlag, setFirstPlayFlag] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -45,6 +46,7 @@ const Header = () => {
           <a href="#Tokenomics">Tokenomic</a>
           <a href="#About">About</a>
           <a href="#Warmap">War Map</a>
+          <Link className="text-c1 font-semibold" to="/presale_signup">Pre-sale signup</Link>
      
         </Flex>
         <Flex className="justify-end gap-1 items-center">

@@ -5,17 +5,18 @@ import Roadmap from "./Roadmap/RoadmapCard";
 import Receive from "./Receive/Receive";
 import Signup from "./Signup/Signup";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <>
-        <Hero />
-        <About />
-        <Roadmap />
+        <div className="bg-pep">
+          <Hero />
+          <About />
+          <Roadmap />
+        </div>
       </>
-    ),  
+    ),
   },
   {
     path: "/withdraw_airdrop",
