@@ -2,6 +2,7 @@ import { TwitterLogo, X } from "@phosphor-icons/react";
 import { Body, Flex, Grid, Inside } from "../Tags/Tags";
 import { useState } from "react";
 import { useMainContext } from "@/Context";
+import { Link } from "react-router-dom";
 
 const AirdropModal = ({ isAirdropModalOpen, setIsAirdropModalOpen }) => {
   const {page, setPage} = useMainContext();
@@ -58,7 +59,7 @@ const AirdropModal = ({ isAirdropModalOpen, setIsAirdropModalOpen }) => {
                 </span>
                 <div>Share on Twitter</div>
               </button>
-                <div className="pt-2 m-auto">Alredy shared? <span className="text-c1 cursor-pointer" onClick={()=>setPage("airdrop")}>Claim</span></div>
+                <Link  to="/withdraw_airdrop" className="pt-2 m-auto">Alredy shared? <span className="text-c1 cursor-pointer" onClick={()=>setPage("airdrop")}>Claim</span></Link>
             </Grid>
           </Body>
           <div></div>

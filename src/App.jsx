@@ -6,7 +6,6 @@ import Roadmap from "./Roadmap/RoadmapCard";
 import "@/button.css";
 import AirdropModal from "@/Components/AirdropModal/AirdropModal";
 import { useState } from "react";
-import Recive from "./Recive/Recieve";
 import { useMainContext } from "./Context";
 const App = () => {
   const { page, setPage } = useMainContext();

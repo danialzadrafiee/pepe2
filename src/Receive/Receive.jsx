@@ -10,8 +10,9 @@ import bs58 from "bs58";
 import { Flex, Grid } from "@/Components/Tags/Tags";
 import { ArrowLeft, ArrowsClockwise, Check, Gift } from "@phosphor-icons/react";
 import { useMainContext } from "@/Context";
-import { Buffer } from 'buffer';
-const AirButton = () => {
+import { Buffer } from "buffer";
+import { Link } from "react-router-dom";
+const Recieve = () => {
   const [isLoading, setIsLoading] = useState(false);
   const network = WalletAdapterNetwork.Devnet;
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
@@ -40,11 +41,7 @@ const AirButton = () => {
       const confirmationStrategy = {
         commitment: "processed",
       };
-      const signature = await web3.sendAndConfirmRawTransaction(
-        connection,
-        signedTransaction.serialize(),
-        confirmationStrategy
-      );
+      const signature = await web3.sendAndConfirmRawTransaction(connection, signedTransaction.serialize(), confirmationStrategy);
       const confirmResult = await connection.confirmTransaction({ signature });
       console.log("Transaction confirmation status:", confirmResult.value);
       console.log("Token airdrop successful! Signature:", signature);
@@ -60,7 +57,9 @@ const AirButton = () => {
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
           <div className="min-h-dvh h-full z-[60] bg-pep flex tab:flex-col mob:flex-col items-center justify-center p-4">
-            <ArrowLeft onClick={() => setPage(0)} size={40} className="text-c1 absolute top-9 left-9 mob:top-4mob:left-4 bg-black/60 border-2 border-c1  p-2  rounded-full cursor-pointer" />
+            <Link to="/">
+              <ArrowLeft size={40} className="text-c1 absolute top-9 left-9 mob:top-4mob:left-4 bg-black/60 border-2 border-c1  p-2  rounded-full cursor-pointer" />
+            </Link>
             <img src="/img/p1.png" className="grayscale lg:absolute mob:mx-auto right-0 bottom-0 w-[50%] max-w-[28vw] md:w-[28vw]" alt="" />
             <div className="rounded-lg pointer-events-none grayscale w-full max-w-lg border-2 p-6 sm:p-10 border-c1 bg-gradient-to-br from-black/70 to-gray-900/70 shadow-lg shadow-c1/30">
               <Grid className="items-center">
@@ -130,4 +129,4 @@ const AirButton = () => {
   );
 };
 
-export default AirButton;
+export default Recieve;
