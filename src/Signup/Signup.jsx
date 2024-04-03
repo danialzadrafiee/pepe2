@@ -32,9 +32,13 @@ const Signup = () => {
     if (!walletAddress) {
       newErrors.walletAddress = "Wallet address is required";
       isValid = false;
-    } else if (!PublicKey.isOnCurve(walletAddress)) {
-      newErrors.walletAddress = "Invalid Solana wallet address";
-      isValid = false;
+    } else {
+      try {
+        new PublicKey(walletAddress);
+      } catch (error) {
+        newErrors.walletAddress = "Invalid Solana wallet address";
+        isValid = false;
+      }
     }
 
     if (!experience) {
