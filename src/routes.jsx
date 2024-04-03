@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     element: <Receive />,
   },
   {
-    path: "/signup",
+    path: "/presale_signup",
     element: <Signup />,
   },
 ]);
