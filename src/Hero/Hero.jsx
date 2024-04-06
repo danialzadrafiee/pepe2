@@ -44,10 +44,10 @@ const Hero = () => {
                   </span>
                 </a>
                   {/*  onClick={() => setIsAirdropModalOpen(true)} */}
-                {/* <Link className="col-span-2  mt-2 glowbutton font-semibold flex items-center justify-center gap-2" to="/presale_signup">
+                <Link className="col-span-2  mt-2 glowbutton font-semibold flex items-center justify-center gap-2" to="/presale_signup">
                     <Rocket size={32} weight="fill" />
                     Sign up for Pre-sale
-                </Link> */}
+                </Link>
               </Grid>
             </Grid>
           </Grid>
