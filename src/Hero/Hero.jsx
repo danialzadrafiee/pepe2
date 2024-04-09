@@ -1,12 +1,38 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Flex, Grid } from "@/Components/Tags/Tags";
 import Header from "@/Header/Header";
-import { Gift, Rocket, TelegramLogo, TwitterLogo } from "@phosphor-icons/react";
-import AirdropModal from "@/Components/AirdropModal/AirdropModal";
-import { Link } from "react-router-dom";
+import { TelegramLogo, TwitterLogo } from "@phosphor-icons/react";
 
 const Hero = () => {
-  const [isAirdropModalOpen, setIsAirdropModalOpen] = useState(false);
+  const [countdown, setCountdown] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    const targetDate = new Date("2024-04-10T12:00:00").getTime();
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      setCountdown({ days, hours, minutes, seconds });
+
+      if (distance < 0) {
+        clearInterval(timer);
+      }
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
 
   const TokenomicsCard = ({ title, value }) => {
     return (
@@ -20,19 +46,35 @@ const Hero = () => {
   };
   return (
     <Fragment>
-      <AirdropModal {...{ isAirdropModalOpen, setIsAirdropModalOpen }} />
       <section className="bg-hero">
-        <Flex className="h-dvh max-w-[1200px] mob:flex-col tab:flex-col  mx-auto justify-between items-center">
-          <Grid>
+        <Flex className="h-dvh max-w-[1200px] mob:flex-col tab:flex-col mx-auto justify-between items-center">
+          <Flex className="flex-col items-center  justify-center h-full">
             <Header />
-            <div className="font-impact max-w-xl leading-[80px] mob:text-[45px] tab:text-[60px] tab:mt-48  tab:leading-[60px]  tab:mx-auto tab:text-center  tab:max-w-lg  mob:mt-28 mob:leading-[50px] mob:text-center text-[80px] mob:pb-4  tab:pb-2 pb-14">
-              Don't miss the great <span className="text-[#0cbe50]">presale</span>
-            </div>
-            <div className="text-xl mob:text-lg mob:text-center  mob:-mt-4 mob:px-4 mob:mx-auto  max-w-lg tab:text-center pb-4">
-              Presale will launch soon. Join Pepoleon's army to conquer all the memes.
-            </div>
-            <Grid>
-              <Grid className="grid-cols-2 origin-top mob:scale-[0.8] mob:mx-auto tab:mx-auto  gap-2  w-full max-w-xs">
+            <div className="text-c1 border-c1 border-2 bg-gradient-to-b from-black/50 to-black/40  lg:ml-10 rounded-xl p-10 mob:p-5 mob:max-w-xs text-center">
+              <div className="text-lg mt-4 pb-2">The pre-sale will be held soon on this page.</div>
+              <div className="font-impact max-w-lg  text-white leading-tight mob:text-[30px] tab:text-[60px]  tab:leading-[60px] tab:mx-auto tab:text-center tab:max-w-lg mob:leading-tight mob:text-center text-[45px]  ">
+                Don't miss the great <span className="text-[#0cbe50]">presale</span>
+              </div>
+              <div className="flex justify-center space-x-6">
+                <div>
+                  <div className="mob:text-2xl text-4xl font-semibold">{countdown.days}</div>
+                  <div className="text-sm">Days</div>
+                </div>
+                <div>
+                  <div className="mob:text-2xl text-4xl font-semibold">{countdown.hours}</div>
+                  <div className="text-sm">Hours</div>
+                </div>
+                <div>
+                  <div className="mob:text-2xl text-4xl font-semibold">{countdown.minutes}</div>
+                  <div className="text-sm">Minutes</div>
+                </div>
+                <div>
+                  <div className="mob:text-2xl text-4xl font-semibold">{countdown.seconds}</div>
+                  <div className="text-sm">Seconds</div>
+                </div>
+              </div>
+
+              <Grid className="grid-cols-2 mx-auto mt-5 origin-top mob:scale-[0.8] mob:mx-auto tab:mx-auto  gap-2  w-full max-w-xs">
                 <a href="https://t.me/PepoleonPortal" className="rounded bg-c1 gap-2 font-semibold py-2 flex items-center justify-center text-primary">
                   <TelegramLogo size={32} weight="fill" />
                   <div>Telegram</div>
@@ -43,15 +85,10 @@ const Hero = () => {
                     <div>Twitter</div>
                   </span>
                 </a>
-                  {/*  onClick={() => setIsAirdropModalOpen(true)} */}
-                <Link className="col-span-2  mt-2 glowbutton font-semibold flex items-center justify-center gap-2" to="/presale_signup">
-                    <Rocket size={32} weight="fill" />
-                    Sign up for Pre-sale
-                </Link>
               </Grid>
-            </Grid>
-          </Grid>
-          <img src="./img/p1.png" className="w-[580px] absolute right-0 bottom-0 max-w-lg mob:w-auto tab:w-auto tab:h-[35dvh]  mob:h-[35dvh] self-end" />
+            </div>
+          </Flex>
+          <img src="./img/p1.png" className="w-[580px] absolute right-0 bottom-0 max-w-lg mob:w-auto tab:w-auto tab:h-[35dvh] mob:h-[35dvh] self-end" />
         </Flex>
         <section id="Tokenomics">
           <Grid className="grid-cols-4 mob:grid-cols-2 border-t border-b border-c1 mob:h-max h-[195px]  bg-black/40 w-full">

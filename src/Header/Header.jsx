@@ -7,11 +7,10 @@ const Header = () => {
   const [firstPlayFlag, setFirstPlayFlag] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
-  const { page, setPage } = useMainContext();
   useEffect(() => {
     const playAudio = () => {
       if (firstPlayFlag === 0) {
-        // audioRef.current.play();
+        audioRef.current.play();
         setIsPlaying(true);
         setFirstPlayFlag(1);
       }
@@ -28,7 +27,7 @@ const Header = () => {
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
-      // audioRef.current.play();
+      audioRef.current.play();
       setIsPlaying(true);
     }
   };
@@ -46,8 +45,6 @@ const Header = () => {
           <a href="#Tokenomics">Tokenomic</a>
           <a href="#About">About</a>
           <a href="#Warmap">War Map</a>
-          <Link className="text-c1 font-semibold" to="/presale_signup">Pre-sale signup</Link>
-     
         </Flex>
         <Flex className="justify-end gap-1 items-center">
           <a href="https://t.me/PepoleonPortal" className="size-10 bg-c3 rounded border border-c1/50 text-c1 flex items-center justify-center">
