@@ -12,7 +12,7 @@ const Hero = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date("2024-04-10T12:00:00").getTime();
+    const targetDate = new Date("2024-04-10T17:00:00").getTime();
     const timer = setInterval(() => {
       const now = new Date().getTime();
       const distance = targetDate - now;
