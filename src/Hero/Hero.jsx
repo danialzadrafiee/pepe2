@@ -50,7 +50,7 @@ const Hero = () => {
         <Flex className="h-dvh max-w-[1200px] mob:flex-col tab:flex-col mx-auto justify-between items-center">
           <Flex className="flex-col items-center  justify-center h-full">
             <Header />
-            <div className="text-c1 border-c1 border-2 bg-gradient-to-b from-black/50 to-black/40  lg:ml-10 rounded-xl p-10 mob:p-5 mob:max-w-xs text-center">
+            <div className="text-c1 relative z-[2] border-c1 border-2 bg-gradient-to-b from-black/50 to-black/40  lg:ml-10 rounded-xl p-10 mob:p-5 mob:max-w-xs text-center">
               <div className="text-lg mt-4 pb-2">The pre-sale will be held soon on this page.</div>
               <div className="font-impact max-w-lg  text-white leading-tight mob:text-[30px] tab:text-[60px]  tab:leading-[60px] tab:mx-auto tab:text-center tab:max-w-lg mob:leading-tight mob:text-center text-[45px]  ">
                 Don't miss the great <span className="text-[#0cbe50]">presale</span>
