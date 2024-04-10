@@ -6,3 +6,11 @@ html {
   color: white;
 }
 
+   .progress-bar {
+      animation: fill 3s linear forwards;
+    }
+
+    @keyframes fill {
+      0% { width: 0; }
+      100% { width: 100%; }
+    }

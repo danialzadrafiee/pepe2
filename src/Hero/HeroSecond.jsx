@@ -1,8 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Flex, Grid } from "@/Components/Tags/Tags";
 import Header from "@/Header/Header";
-import { Rocket, TelegramLogo, TwitterLogo } from "@phosphor-icons/react";
-import { Link } from "react-router-dom";
+import { TelegramLogo, TwitterLogo } from "@phosphor-icons/react";
 
 const Hero = () => {
   const [countdown, setCountdown] = useState({
@@ -52,14 +51,40 @@ const Hero = () => {
           <Flex className="flex-col items-center  justify-center h-full">
             <Header />
             <div className="text-c1 relative z-[2] border-c1 border-2 bg-gradient-to-b from-black/50 to-black/40  lg:ml-10 rounded-xl p-10 mob:p-5 mob:max-w-xs text-center">
-              <div className="text-lg mt-4 pb-2">Time is limited, don't miss the opportunity.</div>
+              <div className="text-lg mt-4 pb-2">The pre-sale will be held soon on this page.</div>
               <div className="font-impact max-w-lg  text-white leading-tight mob:text-[30px] tab:text-[60px]  tab:leading-[60px] tab:mx-auto tab:text-center tab:max-w-lg mob:leading-tight mob:text-center text-[45px]  ">
-          You are redirecting to <span className="text-c1">PRE-SALE!</span>
+                Don't miss the great <span className="text-[#0cbe50]">presale</span>
               </div>
-              <a href="https://presale.pepoleon.xyz" className="col-span-2  mt-2 glowbutton font-semibold flex items-center justify-center gap-2" to="/presale_signup">
-                <Rocket size={32} weight="fill" />
-           Lets Go!
-              </a>
+              <div className="flex justify-center space-x-6">
+                <div>
+                  <div className="mob:text-2xl text-4xl font-semibold">{countdown.days}</div>
+                  <div className="text-sm">Days</div>
+                </div>
+                <div>
+                  <div className="mob:text-2xl text-4xl font-semibold">{countdown.hours}</div>
+                  <div className="text-sm">Hours</div>
+                </div>
+                <div>
+                  <div className="mob:text-2xl text-4xl font-semibold">{countdown.minutes}</div>
+                  <div className="text-sm">Minutes</div>
+                </div>
+                <div>
+                  <div className="mob:text-2xl text-4xl font-semibold">{countdown.seconds}</div>
+                  <div className="text-sm">Seconds</div>
+                </div>
+              </div>
+              <Grid className="grid-cols-2 mx-auto mt-5 origin-top mob:scale-[0.8] mob:mx-auto tab:mx-auto  gap-2  w-full max-w-xs">
+                <a href="https://t.me/PepoleonPortal" className="rounded bg-c1 gap-2 font-semibold py-2 flex items-center justify-center text-primary">
+                  <TelegramLogo size={32} weight="fill" />
+                  <div>Telegram</div>
+                </a>
+                <a href="https://twitter.com/PepoleonOnSol" className="rounded bg-c1 gap-2 font-semibold py-2 flex items-center justify-center text-primary">
+                  <span className="flex gap-2  items-center">
+                    <TwitterLogo size={32} weight="fill" />
+                    <div>Twitter</div>
+                  </span>
+                </a>
+              </Grid>
             </div>
           </Flex>
           <img src="./img/p1.png" className="w-[580px] absolute right-0 bottom-0 max-w-lg mob:w-auto tab:w-auto tab:h-[35dvh] mob:h-[35dvh] self-end" />
