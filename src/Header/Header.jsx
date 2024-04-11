@@ -45,6 +45,7 @@ const Header = () => {
           <a href="#Tokenomics">Tokenomic</a>
           <a href="#About">About</a>
           <a href="#Warmap">War Map</a>
+          <a href="https://presale.pepoleon.xyz" className="text-c1">Pre-sale</a>
         </Flex>
         <Flex className="justify-end gap-1 items-center">
           <a href="https://t.me/PepoleonPortal" className="size-10 bg-c3 rounded border border-c1/50 text-c1 flex items-center justify-center">

@@ -9,7 +9,7 @@ import Signup from "./Signup/Signup";
 const ProgressBar = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
-      window.location.href = "https://presale.pepoleon.xyz";
+      // window.location.href = "https://presale.pepoleon.xyz";
     }, 3000);
 
     return () => clearTimeout(timer);
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
           <Hero />
           <About />
           <Roadmap />
-          <ProgressBar />
+          {/* <ProgressBar /> */}
         </div>
       </>
     ),
