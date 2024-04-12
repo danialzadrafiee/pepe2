@@ -15,7 +15,7 @@ const Olympic = () => {
   const [txhash, setTxhash] = useState("");
   const [telegramId, setTelegramId] = useState("");
   const [errors, setErrors] = useState({});
-
+  const [isSending, setIsSending] = useState(false);
   const handleTxhashChange = (e) => {
     setTxhash(e.target.value);
   };
@@ -45,6 +45,7 @@ const Olympic = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     if (validateForm()) {
+      setIsSending(true);
       try {
         const response = await fetch("https://formsubmit.co/subdanial@gmail.com", {
           method: "POST",
@@ -68,7 +69,10 @@ const Olympic = () => {
       } catch (error) {
         console.error("Error submitting user data:", error);
         toast.error("Signup failed. Please try again.");
+      } finally {
+        setIsSending(false);
       }
+
     }
   };
 
@@ -144,7 +148,7 @@ const Olympic = () => {
             <div>
               <h2 className="text-lg font-semibold text-white mb-2">Step 4: Sign Up</h2>
               <button type="submit" className="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-200" onClick={handleSignup}>
-                Sign Up and Join Olympic Game
+                {isSending ? "Sending..." : "Sign Up and Join Olympic Game"}
               </button>
             </div>
           </>
