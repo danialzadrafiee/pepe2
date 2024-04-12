@@ -138,7 +138,7 @@ const Olympic = () => {
               <h2 className="text-lg font-semibold text-white mb-2">Step 3: Enter Telegram Username</h2>
               <Label className="block text-gray-400 font-semibold mb-2">Telegram Username</Label>
               <input
-                placeholder="@your_telegram_id"
+                placeholder="@your_telegram_username"
                 className={`w-full px-3 py-2 bg-gray-700 text-white border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 ${errors.telegramId ? "border-red-500" : ""}`}
                 value={telegramId}
                 onChange={handleTelegramIdChange}
