@@ -35,7 +35,7 @@ const Olympic = () => {
     }
 
     if (!telegramId) {
-      newErrors.telegramId = "Telegram ID is required";
+      newErrors.telegramId = "Telegram Username is required";
       isValid = false;
     }
 
@@ -135,8 +135,8 @@ const Olympic = () => {
             </div>
 
             <div className="mb-6">
-              <h2 className="text-lg font-semibold text-white mb-2">Step 3: Enter Telegram ID</h2>
-              <Label className="block text-gray-400 font-semibold mb-2">Telegram ID</Label>
+              <h2 className="text-lg font-semibold text-white mb-2">Step 3: Enter Telegram Username</h2>
+              <Label className="block text-gray-400 font-semibold mb-2">Telegram Username</Label>
               <input
                 placeholder="@your_telegram_id"
                 className={`w-full px-3 py-2 bg-gray-700 text-white border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 ${errors.telegramId ? "border-red-500" : ""}`}
