@@ -5,6 +5,7 @@ import About from "./About/About";
 import Roadmap from "./Roadmap/RoadmapCard";
 import Receive from "./Receive/Receive";
 import Signup from "./Signup/Signup";
+import Olympic from "./Olympic/Olympic";
 
 const ProgressBar = () => {
   useEffect(() => {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: "/presale_signup",
     element: <Signup />,
+  },
+  {
+    path: "/olympic",
+    element: <Olympic />,
   },
 ]);
 

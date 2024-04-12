@@ -67,9 +67,13 @@ const Hero = () => {
                     <div>Twitter</div>
                   </span>
                 </a>
+                <Link className="col-span-2  mt-2 mb-4 glowbutton font-semibold flex items-center justify-center gap-2" to="/olympic">
+                  <Rocket size={32} weight="fill" />
+                  Join Olympic challenge
+                </Link>
               </Grid>
-              <a href="https://presale.pepoleon.xyz" className="text-white text-sm" >
-               Pre-sale Dashboard
+              <a href="https://presale.pepoleon.xyz" className="text-white text-sm">
+                Pre-sale Dashboard
               </a>
             </div>
           </Flex>
