@@ -90,7 +90,7 @@ const Olympic = () => {
     <div className="min-h-screen flex items-center justify-center mob:min-h-dvh bg-pep">
       <Modal center={true} styles={{ modal: { backgroundColor: "slategray", borderRadius: "10px", padding: "20px" } }} open={modalOpen} classNames={"bg-red-500"} onClose={() => setModalOpen(false)}>
         Ladies and gentlemen, welcome to the Pepoleon Olympics! 🎉 For just 0.006 SOL, you can sign up and join in the excitement of our bracket-style competition. 🏆 The grand prize? An exclusive
-        1-on-1 NFT experience with incredible perks in the Papo ecosystem! 🎁 But wait, there's more! Alternatively, participants can choose a fantastic 0.5 Sana option. 💰 Get ready to unleash your
+        1-on-1 NFT experience with incredible perks in the Papo ecosystem! 🎁 But wait, there's more! Alternatively, participants can choose a fantastic 0.5 Solana option. 💰 Get ready to unleash your
         competitive spirit and let the games begin! 🏅🔥 Let's make history together! 🌍✨
       </Modal>
 
