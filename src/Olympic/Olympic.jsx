@@ -10,6 +10,7 @@ import { Copy, Question } from "@phosphor-icons/react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import Modal from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
+import axios from "axios";
 
 const Olympic = () => {
   const [txhash, setTxhash] = useState("");
@@ -47,17 +48,19 @@ const Olympic = () => {
     if (validateForm()) {
       setIsSending(true);
       try {
-        const response = await fetch("https://formsubmit.co/subdanial@gmail.com", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
+        const response = await axios.post(
+          "https://formspree.io/f/xwkgwabj",
+          {
             txhash,
             telegramId,
-          }),
-        });
-        if (response.ok) {
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        if (response.status === 200) {
           console.log("User data submitted successfully");
           toast.success("Signup successful!");
           setTxhash("");
@@ -72,10 +75,8 @@ const Olympic = () => {
       } finally {
         setIsSending(false);
       }
-
     }
   };
-
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
