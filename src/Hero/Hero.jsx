@@ -3,7 +3,7 @@ import { Flex, Grid } from "@/Components/Tags/Tags";
 import Header from "@/Header/Header";
 import { Rocket, TelegramLogo, TwitterLogo } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
-
+import "./Hero.scss";
 const Hero = () => {
   const [countdown, setCountdown] = useState({
     days: 0,
@@ -53,8 +53,15 @@ const Hero = () => {
             <Header />
             <div className="text-c1 relative z-[2] border-c1 border-2 bg-gradient-to-b from-black/50 to-black/40  lg:ml-10 rounded-xl p-10 mob:p-5 mob:max-w-xs text-center">
               <div className="font-impact max-w-lg  text-white leading-tight mob:text-[30px] tab:text-[60px]  tab:leading-[60px] tab:mx-auto tab:text-center tab:max-w-lg mob:leading-tight mob:text-center text-[45px]  ">
-                <div>Pre-sale phase 1 is completed successfully</div>
-                <div className="text-c1 text-lg  ">Follow the social network to find out about phase 2</div>
+                <div>
+                  Presale phase-1 <span className="text-[#0cbe50]">[Whitelist only]</span> is completed successfully
+                </div>
+                <div className=" text-lg font-sans font-semibold  ">
+                  The second phase <span className="text-[#0cbe50]"> [public]</span> will be executed on the{" "}
+                  <a href="https://launchpad.pepoleon.xyz">
+                    <h1 className="glitch pointer-events-auto">Pepoleon Launchpad</h1>
+                  </a>
+                </div>
               </div>
               <Grid className="grid-cols-2 mx-auto mt-5 origin-top mob:scale-[0.8] mob:mx-auto tab:mx-auto  gap-2  w-full max-w-xs">
                 <a href="https://t.me/PepoleonPortal" className="rounded bg-c1 gap-2 font-semibold py-2 flex items-center justify-center text-primary">
@@ -67,14 +74,11 @@ const Hero = () => {
                     <div>Twitter</div>
                   </span>
                 </a>
-                {/* <Link className="col-span-2  mt-2 mb-4 glowbutton font-semibold flex items-center justify-center gap-2" to="/olympic">
+                <a href="https://launchpad.pepoleon.xyz" className="col-span-2  mt-2 px-0 mb-4 py-4 glowbutton font-semibold flex items-center justify-center gap-2" to="/olympic">
                   <Rocket size={32} weight="fill" />
-                  Join Olympic challenge
-                </Link> */}
+                  Join Presale Phase-2 (public)
+                </a>
               </Grid>
-              <a href="https://presale.pepoleon.xyz" className="text-white text-sm">
-                Pre-sale Dashboard
-              </a>
             </div>
           </Flex>
           <img src="./img/p1.png" className="w-[580px] absolute right-0 bottom-0 max-w-lg mob:w-auto tab:w-auto tab:h-[35dvh] mob:h-[35dvh] self-end" />
