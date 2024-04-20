@@ -38,7 +38,6 @@ const Header = () => {
           <img src="./img/p3.png" className="size-[80px] flip" alt="logo" />
           <Grid>
             <div className="text-3xl mob:text-2xl pt-3 leading-3  mob:leading-[10px] font-impact text-c1 b">Pepoleon</div>
-            <div>Presale</div>
           </Grid>
         </Flex>
         <Flex className="gap-8 tab:hidden mob:hidden items-center justify-center">
